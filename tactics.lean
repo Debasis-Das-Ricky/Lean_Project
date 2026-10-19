@@ -1,0 +1,3 @@
+-- A tactics is a command that tells Lean how to make progress on a proof.
+-- After by, lean enter tactic mode and shows a goal: what is left to prove, togather with the hypothesis available.
+-- Each tatic transforms the goal(or splits it into smaller goals) untill none remain.
