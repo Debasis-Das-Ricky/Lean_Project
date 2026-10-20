@@ -41,4 +41,22 @@ example : ∃ n : ℕ, n + 2 = 5 := by
 example: 2 + 2 = 4 := by
  rfl
 
--- 9.
+-- 9. rw: Rewrites the goal using an equation
+example (a b : ℕ) (h : a = b) : a + 1 = b + 1 := by
+ rw[h]
+
+-- 10. simp: Simplifies using large database of rules
+example (a : ℕ) : a+0=a :=by
+ simp
+
+-- 11. ring: Proves identities in commutative (semi)rings.
+example (a b : ℝ) : (a+b)^2 = a^2 + 2*a*b + b^2 := by
+ ring
+
+-- 12. norm_num: Prove Numerical facts
+example: (3 : ℝ) * 4 - 2 = 10 := by
+ norm_num
+
+-- 13. linarith: Proves linear (in)equalities from hypothesis
+example (x y : ℝ) (h1 : x < y) (h2 : y < 5) : x < 5 := by
+ linarith
